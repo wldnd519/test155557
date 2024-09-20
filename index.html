@@ -4,45 +4,54 @@
   <title>Message</title>
 </head>
 <body>
+  <div id="message"></div> 
+
   <script>
 
     function getMessage(name) {
       return `Hello, ${name}...`;
     }
 
-    const message = getMessage('Ornella');
-    document.write(message);
-
-    setTimeout(() => {
-      document.write('<br>...Hello again!');
-    }, 2000);
-
+ 
     function introPart1() {
-      return '안녕하세요';
+      return `안녕하세요`;
     }
 
     function introPart2() {
-      return '저는 현지웅입니다';
+      return `저는`;
     }
 
     function introPart3() {
-      return '집에 가고싶습니다';
+      return `현지웅입니다`;
     }
 
+    const messageElement = document.getElementById("message");
+
+   
+    let message = getMessage('Ornella');
+    messageElement.innerHTML = message;
+
+   
+    setTimeout(() => {
+      messageElement.innerHTML = "...Hello again!";
+    }, 2000);
+
+   
     let introCounter = 0;
-    setInterval(() => {
-      document.write('<br>');
-      if (introCounter === 0) {
-        document.write(introPart1());
-        introCounter++;
-      } else if (introCounter === 1) {
-        document.write(introPart2());
-        introCounter++;
-      } else if (introCounter === 2) {
-        document.write(introPart3());
-        introCounter = 0; 
-      }
-    }, 3000); 
+    setTimeout(() => {
+      setInterval(() => {
+        if (introCounter === 0) {
+          messageElement.innerHTML = introPart1();
+          introCounter++;
+        } else if (introCounter === 1) {
+          messageElement.innerHTML = introPart2();
+          introCounter++;
+        } else if (introCounter === 2) {
+          messageElement.innerHTML = introPart3();
+          introCounter = 0;
+        }
+      }, 3000); 
+    }, 3000);
   </script>
 </body>
 </html>
