@@ -1,1 +1,51 @@
-<!--start-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Message</title>
+</head>
+<body>
+  <script>
+    // 템플릿 리터럴 방식으로 변경
+    function getMessage(name) {
+      return `Hello, ${name}...`;
+    }
+    
+    const message = getMessage('Ornella');
+    document.write(message);
+
+    // setInterval을 사용하여 2초마다 메시지 업데이트
+    setInterval(() => {
+      document.write('<br>...Hello again!');
+    }, 2000);
+
+    // 3초마다 업데이트되는 자기소개 글
+    function introPart1() {
+      return `My name is Ornella.`;
+    }
+
+    function introPart2() {
+      return `I am a software developer.`;
+    }
+
+    function introPart3() {
+      return `I love coding!`;
+    }
+
+    // 3초마다 다른 함수를 실행하여 자기소개글 업데이트
+    let introCounter = 0;
+    setInterval(() => {
+      document.write('<br>');
+      if (introCounter === 0) {
+        document.write(introPart1());
+        introCounter++;
+      } else if (introCounter === 1) {
+        document.write(introPart2());
+        introCounter++;
+      } else if (introCounter === 2) {
+        document.write(introPart3());
+        introCounter = 0;  // 다시 처음 함수로 돌아가도록 설정
+      }
+    }, 3000);  // 3초마다 실행
+  </script>
+</body>
+</html>
