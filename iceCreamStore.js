@@ -36,7 +36,7 @@ let iceCreamFlavors = [
   let maxFlavor = '';
   let maxCount = 0;
   let flavors = Object.keys(flavorDistribution);
-  
+  //
   flavors.forEach(flavor => {
     if (flavorDistribution[flavor] > maxCount) {
       maxCount = flavorDistribution[flavor];
