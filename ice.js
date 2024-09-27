@@ -43,5 +43,5 @@ let iceCreamFlavors = [
       maxFlavor = flavor;
     }
   });
-  //
+  ////
   console.log(`가장 많이 팔린 맛은 ${maxFlavor} : ${maxCount} 개 팔림.`);
